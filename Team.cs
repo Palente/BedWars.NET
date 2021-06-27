@@ -1,4 +1,5 @@
-﻿using OpenAPI.Player;
+﻿using MiNET.Utils.Vectors;
+using OpenAPI.Player;
 
 namespace BedWars.NET
 {
@@ -7,9 +8,14 @@ namespace BedWars.NET
         public TeamColors Color;
         public OpenPlayer Player;
         public TeamStatus Status = TeamStatus.ALIVE;
-        public int[] BedPosition;
-
-
+        public BlockCoordinates[] BedPosition;
+        public PlayerLocation SpawnPosition;
         public string GetTeamName() => Color.ToString();
+
+
+        public override string ToString()
+        {
+            return Color.ToString();
+        }
     }
 }
